@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:puntodeventa/Datos/Bdproductos.dart';
+import '/Datos/Bdproductos.dart';
 
 class AgregarProductos extends StatefulWidget {
   const AgregarProductos({super.key});

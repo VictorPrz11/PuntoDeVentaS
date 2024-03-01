@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:puntodeventa/Datos/Bdproductos.dart';
-import 'package:puntodeventa/Pantallas/Productos.dart';
-import 'package:puntodeventa/Pantallas/Ventas.dart';
+import '/Datos/Bdproductos.dart';
+import '/Pantallas/Productos.dart';
+import '/Pantallas/Ventas.dart';
 class Principal extends StatefulWidget {
   const Principal({super.key});
 

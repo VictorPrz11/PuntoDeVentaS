@@ -1,8 +1,7 @@
-import 'dart:js_interop';
 
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:puntodeventa/Datos/Bdproductos.dart';
-import 'package:puntodeventa/Pantallas/Productos.dart';
+import '/Datos/Bdproductos.dart';
+import '/Pantallas/Productos.dart';
 
 var open = Hive.openBox("productos");
 

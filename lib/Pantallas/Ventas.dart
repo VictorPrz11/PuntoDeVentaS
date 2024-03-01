@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hive/hive.dart';
-import 'package:puntodeventa/Datos/Bdproductos.dart';
+import '/Datos/Bdproductos.dart';
 
 import 'package:puntodeventa/Datos/BusquedaDeProductos.dart';
 
@@ -15,14 +15,15 @@ class Ventas extends StatefulWidget {
 var boxproductos = Hive.box("productos").values.toList();
 var buscar = BusquedaDeProductos();
 
-
+List<Bdproductos> listaproducto = [];
 class _VentasState extends State<Ventas> {
   TextEditingController productoVenta = TextEditingController();
-  List<Bdproductos> listaproducto = [];
-
+  
+  double total = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: Container(child: Text("Total \$${total}"),),
       appBar: AppBar(
         toolbarHeight: 100,
         title: Container(
@@ -43,6 +44,7 @@ class _VentasState extends State<Ventas> {
                           if (n.codigo == producto.codigo||n.nombre == producto.nombre) {
                             encontrado = true;
                             producto.cantidad++;
+                            sumarTotal();
                             setState(() {});
                             break;
                           }
@@ -54,6 +56,7 @@ class _VentasState extends State<Ventas> {
                             cantidad: 1,
                             codigo: n.codigo,
                           );
+                          sumarTotal();
                           listaproducto.add(producto);
                           setState(() {});
                         }
@@ -97,4 +100,7 @@ class _VentasState extends State<Ventas> {
       )),
     );
   }
-}
+  void sumarTotal() {
+    
+    }
+  }
